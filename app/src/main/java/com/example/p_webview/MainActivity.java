@@ -14,6 +14,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         error) {
             super.onReceivedError(view, request, error);
             Log.v("hank","onReceivedError:" + "request:" + request.getMethod() + "/WebResourceError:" + error.getDescription() +"/getErrorCode:" + error.getErrorCode());
+//            view.loadUrl("https://www.google.com");
+            startActivity(new Intent(MainActivity.this,ErrorActivity.class));
         }
 
         @Override
